@@ -1,0 +1,38 @@
+plugins:
+  - uses:
+      - plugin: "https://ubiquity-os-command-start-stop-main.ubiquity.workers.dev"
+        skipBotEvents: false
+        with:
+          maxConcurrentTasks:
+            collaborator: 999999
+            contributor: 999999
+  - uses:
+      - plugin: "https://ubiquity-os-plugin-demo-main.ubiquity.workers.dev"
+  - uses:
+      - plugin: "https://ubiquity-os-command-wallet-main.ubiquity.workers.dev"
+  - uses:
+      - plugin: "ubiquity-os-marketplace/command-ask@main"
+        with:
+          model: "anthropic/claude-3.5-sonnet"
+          openAiBaseUrl: "https://openrouter.ai/api/v1"
+  - uses:
+      - plugin: "https://ubiquity-os-command-query-user-main.ubiquity.workers.dev"
+  - uses:
+      - plugin: "ubiquity-os-marketplace/text-conversation-rewards@demo"
+        skipBotEvents: false
+        with:
+          incentives:
+            collaboratorOnlyPaymentInvocation: false
+            contentEvaluator: {}
+            userExtractor: {}
+            dataPurge: {}
+            formattingEvaluator: {}
+            permitGeneration: {}
+            githubComment: {}
+          evmPrivateEncrypted: "Rj8-Y3yPcaB-M9b9VGNG3_DE2bjTLCjH7CRy7_eiPFp-gIkjSG87uHihkCwtAygDhYzg8dAUrIrk-0qI62L8TVnPgH9P8odxzbpWntvubLs7_ZpRjIlVEkjDNS3whEqZOh_xv-YJlUw8iYvneid1Y7o64Nek5qD4oFJXY9_VcT7n0_SC"
+          erc20RewardToken: "0xC6ed4f520f6A4e4DC27273509239b7F8A68d2068"
+          evmNetworkId: 100
+  - uses:
+      - plugin: "ubiquity-os-marketplace/daemon-disqualifier@main"
+  - uses:
+      - plugin: "https://ubiquity-os-comment-vector-embeddings-main.ubiquity.workers.dev"
